@@ -23,20 +23,64 @@ func onLeftArrowPressed():
 	if arrowCount == 0:
 		$ShoppingBackground/LeftArrowButton.set_disabled(true)
 	else:
-		swipeAnimator.play("leftSwipe")
-		nextSprite.set_visible(true)
-		arrowCount -= 1
-		$ShoppingBackground/RightArrowButton.set_disabled(false)
-		
+		match arrowCount:
+			1:
+				swipeAnimator.play("leftSwipe")
+				nextSprite.set_visible(true)
+				arrowCount -= 1
+				$ShoppingBackground/RightArrowButton.set_disabled(false)
+			2:
+				swipeAnimator.play("leftSwipe1")
+				nextSprite.set_visible(true)
+				arrowCount -= 1
+				$ShoppingBackground/RightArrowButton.set_disabled(false)
+			3:
+				swipeAnimator.play("leftSwipe2")
+				nextSprite.set_visible(true)
+				arrowCount -= 1
+				$ShoppingBackground/RightArrowButton.set_disabled(false)
+			4:
+				swipeAnimator.play("leftSwipe3")
+				nextSprite.set_visible(true)
+				arrowCount -= 1
+				$ShoppingBackground/RightArrowButton.set_disabled(false)
+			5:
+				swipeAnimator.play("leftSwipe4")
+				nextSprite.set_visible(true)
+				arrowCount -= 1
+				$ShoppingBackground/RightArrowButton.set_disabled(false)
+
 func onRightArrowPressed():
 	if arrowCount == 5:
 		$ShoppingBackground/RightArrowButton.set_disabled(true)
 	else:
-		swipeAnimator.play("rightSwipe")
-		previousSprite.set_visible(true)
-		arrowCount += 1
-		$ShoppingBackground/LeftArrowButton.set_disabled(false)
-		
+		match arrowCount:
+			0:
+				swipeAnimator.play("rightSwipe")
+				previousSprite.set_visible(true)
+				arrowCount += 1
+				$ShoppingBackground/LeftArrowButton.set_disabled(false)
+			1:
+				swipeAnimator.play("rightSwipe2")
+				previousSprite.set_visible(true)
+				arrowCount += 1
+				$ShoppingBackground/LeftArrowButton.set_disabled(false)
+			2:
+				swipeAnimator.play("rightSwipe3")
+				previousSprite.set_visible(true)
+				arrowCount += 1
+				$ShoppingBackground/LeftArrowButton.set_disabled(false)
+			3:
+				swipeAnimator.play("rightSwipe4")
+				previousSprite.set_visible(true)
+				arrowCount += 1
+				$ShoppingBackground/LeftArrowButton.set_disabled(false)
+			4:
+				swipeAnimator.play("rightSwipe5")
+				previousSprite.set_visible(true)
+				arrowCount += 1
+				$ShoppingBackground/LeftArrowButton.set_disabled(false)
+
 func canSwap():
 	currentSprite.texture = load("res://Sprites/Character/character" + str(arrowCount) + ".png")
 	if arrowCount >= 1:
