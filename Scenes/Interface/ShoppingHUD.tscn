@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Sprites/Interface/Arrows/LeftArrowSprite.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Interface/Arrows/RightArrowSprite.png" type="Texture" id=2]
@@ -52,7 +52,7 @@ tracks/1/keys = {
 "values": [ Vector2( 210, 51 ), Vector2( 205, 51 ), Vector2( 210, 51 ), Vector2( 205, 51 ), Vector2( 210, 51 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("ShoppingBackground/CurrentCharacterSprite/CurrentLabel:rect_position")
+tracks/2/path = NodePath("ShoppingBackground/CurrentLabel:rect_position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -61,10 +61,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1.1, 1.8, 2.4, 3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -28, -43 ), Vector2( -28, -38 ), Vector2( -28, -43 ), Vector2( -28, -38 ), Vector2( -28, -43 ) ]
+"values": [ Vector2( 92, 15 ), Vector2( 92, 20 ), Vector2( 92, 15 ), Vector2( 92, 20 ), Vector2( 92, 15 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("ShoppingBackground/PreviousCharacterSprite/PreviousLabel:rect_position")
+tracks/3/path = NodePath("ShoppingBackground/PreviousLabel:rect_position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -73,10 +73,10 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 1.1, 1.8, 2.4, 3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -24, -47 ), Vector2( -24, -42 ), Vector2( -24, -47 ), Vector2( -24, -42 ), Vector2( -24, -47 ) ]
+"values": [ Vector2( 45.5, 20 ), Vector2( 45.5, 25 ), Vector2( 45.5, 20 ), Vector2( 45.5, 25 ), Vector2( 45.5, 20 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("ShoppingBackground/NextCharacterSprite/NextLabel:rect_position")
+tracks/4/path = NodePath("ShoppingBackground/NextLabel:rect_position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -85,7 +85,259 @@ tracks/4/keys = {
 "times": PoolRealArray( 0, 1.1, 1.8, 2.4, 3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -20, -47 ), Vector2( -20, -42 ), Vector2( -20, -47 ), Vector2( -20, -42 ), Vector2( -20, -47 ) ]
+"values": [ Vector2( 168, 20 ), Vector2( 168, 25 ), Vector2( 168, 20 ), Vector2( 168, 25 ), Vector2( 168, 20 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "leftSwipe"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("ShoppingBackground/CurrentCharacterSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 120, 60 ), Vector2( 180, 50 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ShoppingBackground/CurrentCharacterSprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.6, 0.6 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ShoppingBackground/PreviousCharacterSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 60, 50 ), Vector2( 120, 60 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShoppingBackground/PreviousCharacterSprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.6, 0.6 ), Vector2( 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ShoppingBackground/NextCharacterSprite:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 180, 50 ), Vector2( 60, 50 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("ShoppingBackground/NextCharacterSprite:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.6, 0.6 ), Vector2( 0.6, 0.6 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("ShoppingBackground/CurrentCharacterSprite:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("ShoppingBackground/PreviousCharacterSprite:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("ShoppingBackground/NextCharacterSprite:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ true, false ]
+}
+tracks/9/type = "method"
+tracks/9/path = NodePath(".")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "canSwap"
+} ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "rightSwipe"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("ShoppingBackground/CurrentCharacterSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 120, 60 ), Vector2( 60, 50 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ShoppingBackground/CurrentCharacterSprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.6, 0.6 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ShoppingBackground/NextCharacterSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 180, 50 ), Vector2( 120, 60 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShoppingBackground/NextCharacterSprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.6, 0.6 ), Vector2( 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ShoppingBackground/PreviousCharacterSprite:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 60, 50 ), Vector2( 180, 50 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("ShoppingBackground/PreviousCharacterSprite:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.6, 0.6 ), Vector2( 0.6, 0.6 ) ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "canSwap"
+} ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("ShoppingBackground/CurrentCharacterSprite:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("ShoppingBackground/PreviousCharacterSprite:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("ShoppingBackground/NextCharacterSprite:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [node name="ShoppingHUD" type="Control"]
@@ -117,7 +369,7 @@ anchor_right = 0.073
 anchor_bottom = 0.5
 margin_left = -12.52
 margin_top = -9.5
-margin_right = 12.48
+margin_right = 12.4801
 margin_bottom = 9.5
 disabled = true
 texture_normal = ExtResource( 1 )
@@ -145,19 +397,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CurrentCharacterSprite" type="Sprite" parent="ShoppingBackground"]
-position = Vector2( 120, 60 )
-texture = ExtResource( 10 )
-
-[node name="CurrentLabel" type="Label" parent="ShoppingBackground/CurrentCharacterSprite"]
+[node name="CurrentLabel" type="Label" parent="ShoppingBackground"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -60.0
-margin_top = -75.0
-margin_right = -4.0
-margin_bottom = -58.9999
+margin_left = -28.0
+margin_top = -45.0
+margin_right = 28.0
+margin_bottom = -28.9999
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
@@ -168,20 +416,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PreviousCharacterSprite" type="Sprite" parent="ShoppingBackground"]
-position = Vector2( 60, 50 )
-scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 10 )
-
-[node name="PreviousLabel" type="Label" parent="ShoppingBackground/PreviousCharacterSprite"]
+[node name="PreviousLabel" type="Label" parent="ShoppingBackground"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -56.0
-margin_top = -79.0
-margin_right = -8.0
-margin_bottom = -65.0
+margin_left = -74.5
+margin_top = -40.0
+margin_right = -26.5
+margin_bottom = -26.0
+rect_scale = Vector2( 0.6, 0.6 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
 text = "Previous"
@@ -191,20 +435,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NextCharacterSprite" type="Sprite" parent="ShoppingBackground"]
-position = Vector2( 180, 50 )
-scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 11 )
-
-[node name="NextLabel" type="Label" parent="ShoppingBackground/NextCharacterSprite"]
+[node name="NextLabel" type="Label" parent="ShoppingBackground"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -52.0
-margin_top = -79.0
-margin_right = -12.0
-margin_bottom = -65.0
+margin_left = 48.0
+margin_top = -40.0
+margin_right = 88.0
+margin_bottom = -26.0
+rect_scale = Vector2( 0.6, 0.6 )
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
 text = "Next"
@@ -214,7 +454,41 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="CurrentCharacterSprite" type="Sprite" parent="ShoppingBackground"]
+position = Vector2( 120, 60 )
+texture = ExtResource( 10 )
+
+[node name="CurrentRealSprite" type="Sprite" parent="ShoppingBackground"]
+position = Vector2( 120, 60 )
+texture = ExtResource( 10 )
+
+[node name="PreviousCharacterSprite" type="Sprite" parent="ShoppingBackground"]
+visible = false
+position = Vector2( 60, 50 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 10 )
+
+[node name="PreviousRealSprite" type="Sprite" parent="ShoppingBackground"]
+visible = false
+position = Vector2( 60, 50 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 10 )
+
+[node name="NextCharacterSprite" type="Sprite" parent="ShoppingBackground"]
+position = Vector2( 180, 50 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 10 )
+
+[node name="NextRealSprite" type="Sprite" parent="ShoppingBackground"]
+position = Vector2( 180, 50 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 11 )
+
 [node name="ArrowAnimator" type="AnimationPlayer" parent="."]
 anims/ArrowIdleAnimation = SubResource( 4 )
+
+[node name="SwipeAnimator" type="AnimationPlayer" parent="."]
+anims/leftSwipe = SubResource( 5 )
+anims/rightSwipe = SubResource( 6 )
 [connection signal="pressed" from="ShoppingBackground/LeftArrowButton" to="." method="onLeftArrowPressed"]
 [connection signal="pressed" from="ShoppingBackground/RightArrowButton" to="." method="onRightArrowPressed"]
