@@ -1,89 +1,53 @@
 extends Control
 
 onready var animator = get_node("ArrowAnimator")
-onready var currentSprite = get_node("ShoppingBackground/CurrentRealSprite")
-onready var previousSprite = get_node("ShoppingBackground/PreviousRealSprite")
-onready var nextSprite = get_node("ShoppingBackground/NextRealSprite")
 onready var swipeAnimator = get_node("SwipeAnimator")
 
+onready var currentSprite = get_node("ShoppingBackground/CurrentCharacterSprite")
+onready var previousSprite = get_node("ShoppingBackground/PreviousCharacterSprite")
+onready var nextSprite = get_node("ShoppingBackground/NextCharacterSprite")
+onready var afterNextSprite = get_node("ShoppingBackground/AfterNextCharacterSprite")
+
+var path = "res://Sprites/Character/"
+var dir = Directory.new()
 var arrowCount = 0
+var characterArray = []
+var key = false
 
 func _ready():
+	dir.open(path)
+	dir.list_dir_begin()
+	while true:
+		var fileName = dir.get_next()
+		if fileName == "":
+			break
+		elif !fileName.begins_with(".") and !fileName.ends_with(".import"):
+			characterArray.append(load(path + "/" + fileName))
+	dir.list_dir_end()
 	animator.play("ArrowIdleAnimation")
 
-func _process(_delta):
-	if arrowCount == 0:
-		$ShoppingBackground/LeftArrowButton.set_disabled(true)
-		previousSprite.set_visible(false)
-	elif arrowCount == 5:
-		$ShoppingBackground/RightArrowButton.set_disabled(true)
-		nextSprite.set_visible(false)
-		
-func onLeftArrowPressed():
-	if arrowCount == 0:
-		$ShoppingBackground/LeftArrowButton.set_disabled(true)
-	else:
-		match arrowCount:
-			1:
-				swipeAnimator.play("leftSwipe")
-				nextSprite.set_visible(true)
-				arrowCount -= 1
-				$ShoppingBackground/RightArrowButton.set_disabled(false)
-			2:
-				swipeAnimator.play("leftSwipe1")
-				nextSprite.set_visible(true)
-				arrowCount -= 1
-				$ShoppingBackground/RightArrowButton.set_disabled(false)
-			3:
-				swipeAnimator.play("leftSwipe2")
-				nextSprite.set_visible(true)
-				arrowCount -= 1
-				$ShoppingBackground/RightArrowButton.set_disabled(false)
-			4:
-				swipeAnimator.play("leftSwipe3")
-				nextSprite.set_visible(true)
-				arrowCount -= 1
-				$ShoppingBackground/RightArrowButton.set_disabled(false)
-			5:
-				swipeAnimator.play("leftSwipe4")
-				nextSprite.set_visible(true)
-				arrowCount -= 1
-				$ShoppingBackground/RightArrowButton.set_disabled(false)
-
 func onRightArrowPressed():
-	if arrowCount == 5:
-		$ShoppingBackground/RightArrowButton.set_disabled(true)
-	else:
-		match arrowCount:
-			0:
-				swipeAnimator.play("rightSwipe")
-				previousSprite.set_visible(true)
-				arrowCount += 1
-				$ShoppingBackground/LeftArrowButton.set_disabled(false)
-			1:
-				swipeAnimator.play("rightSwipe2")
-				previousSprite.set_visible(true)
-				arrowCount += 1
-				$ShoppingBackground/LeftArrowButton.set_disabled(false)
-			2:
-				swipeAnimator.play("rightSwipe3")
-				previousSprite.set_visible(true)
-				arrowCount += 1
-				$ShoppingBackground/LeftArrowButton.set_disabled(false)
-			3:
-				swipeAnimator.play("rightSwipe4")
-				previousSprite.set_visible(true)
-				arrowCount += 1
-				$ShoppingBackground/LeftArrowButton.set_disabled(false)
-			4:
-				swipeAnimator.play("rightSwipe5")
-				previousSprite.set_visible(true)
-				arrowCount += 1
-				$ShoppingBackground/LeftArrowButton.set_disabled(false)
-
-func canSwap():
-	currentSprite.texture = load("res://Sprites/Character/character" + str(arrowCount) + ".png")
-	if arrowCount >= 1:
-			previousSprite.texture = load("res://Sprites/Character/character" + str(arrowCount - 1) + ".png")
-	if arrowCount <= 4:
-		nextSprite.texture = load("res://Sprites/Character/character" + str(arrowCount + 1) + ".png")
+	arrowCount += 1
+	print(arrowCount)
+	if arrowCount <= characterArray.size() and key == false:
+		nextSprite.texture = characterArray[arrowCount]
+		currentSprite.texture = characterArray[arrowCount - 1]
+		if arrowCount >= 2:
+			previousSprite.set_visible(true)
+			previousSprite.texture = characterArray[arrowCount - 2]
+		else:
+			previousSprite.texture = characterArray[characterArray.size() - 1]
+		if arrowCount <= characterArray.size() - 2:
+			afterNextSprite.texture = characterArray[arrowCount + 1]
+		if arrowCount == characterArray.size() - 1:
+			afterNextSprite.texture = characterArray[0]
+			key = true
+	elif key == true:
+		previousSprite.texture = characterArray[characterArray.size() - 2]
+		if arrowCount == characterArray.size():
+			currentSprite.texture = characterArray[arrowCount - 1]
+			nextSprite.texture = characterArray[0]
+			afterNextSprite.texture = characterArray[1]
+			arrowCount = 0
+			key = false
+	swipeAnimator.play("rightSwipe")
