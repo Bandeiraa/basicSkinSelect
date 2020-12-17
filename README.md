@@ -1,20 +1,15 @@
 # A basic skin select interface for godot games(With animation)
 
-To use, you just need to change the sprites in assets folder into your game sprites(In this case, limited to 6 sprites).
+To use, you just need to add your game sprites in Sprites folder (You don't necessarily have to put sprites in numeral order, just put skins in the order that you want to see in game).
 
-![Sprites Sample](https://i.imgur.com/yVWYr5i.png)
-
-To this example, the number in sprites matter(For call another sprite by increase one aux variable in code)
-
-![Code Sample](https://i.imgur.com/wPpAGr1.png)
-
-# Examples
-![Sample Image](https://i.imgur.com/4fWP6L0.png)
-
-![Sample Gif](https://media.giphy.com/media/3GzgXmmCyrWfEDtGer/giphy.gif)
+![Sprites Sample](https://i.imgur.com/YlYYVbK.png)
 
 # Things to consider
 
-Note that if you change the assets in characters folder, you have to change the texture animation key in each animation to work properly, otherwise it will not animate well.
+You just need to set the current and next sprite, as you can see below
 
-![Sample Gif](https://media.giphy.com/media/5VsCXfuJeGeaoJ1R9V/giphy.gif)
+![Sample Gif](https://media.giphy.com/media/0UwUsvHNlAjRwpOSOx/giphy.gif)
+
+And let the magic happen
+
+![Sample Gif](https://media.giphy.com/media/zxkSRITv97RXo6Qrpa/giphy.gif)
